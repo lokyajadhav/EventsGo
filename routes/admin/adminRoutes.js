@@ -1,0 +1,18 @@
+"use strict";
+exports.__esModule = true;
+var express_1 = require("express");
+var schema_1 = require("../../joiSchemas/schema");
+var validate_1 = require("../../middlewares/validate");
+var upload_1 = require("../../middlewares/upload");
+var index_1 = require("./index");
+var verifyAdmin_1 = require("../../middlewares/verifyAdmin");
+var router = (0, express_1.Router)();
+var val = new schema_1["default"]();
+router.post('/createadmin', (0, validate_1["default"])(val.signup), verifyAdmin_1["default"], index_1["default"].createAdmin);
+router.post('/addevent', upload_1.upload.single('file'), index_1["default"].addevent);
+router.post('/login', (0, validate_1["default"])(val.login), index_1["default"].login);
+router.get('/getimg/:id', index_1["default"].getImg);
+router.get('/temp', index_1["default"].temp);
+router.post('/verifyadmin', verifyAdmin_1["default"], index_1["default"].verifyAdmin);
+router.post('/deleteevent', index_1["default"].deleteEvent);
+exports["default"] = router;

@@ -1,0 +1,28 @@
+"use strict";
+exports.__esModule = true;
+var express_1 = require("express");
+var schema_1 = require("../../joiSchemas/schema");
+var validate_1 = require("../../middlewares/validate");
+var verify_1 = require("../../middlewares/verify");
+var index_1 = require("./index");
+var admin_1 = require("../admin");
+var verifyAdmin_1 = require("../../middlewares/verifyAdmin");
+var router = (0, express_1.Router)();
+var val = new schema_1["default"]();
+router.post('/addevent', (0, validate_1["default"])(val.changeEvent), verify_1["default"], index_1["default"].addEvent);
+router.post('/isAttended', verifyAdmin_1["default"], index_1["default"].changeIsAttended);
+router.post('/isCancelled', verify_1["default"], index_1["default"].changeIsCancelled);
+router.post('/ongoingevents', index_1["default"].getOnGoingEvents);
+router.post('/pastevents', index_1["default"].getPastEvents);
+router.post('/upcomingevents', index_1["default"].getUpcomingEvents);
+router.post('/getevent', index_1["default"].getEventDetails);
+router.post('/signup', (0, validate_1["default"])(val.signup), index_1["default"].signUp);
+router.post('/sendmail', index_1["default"].sendMail);
+router.post('/changepassword', index_1["default"].changepassword);
+router.post('/verifyotp', index_1["default"].verifyotp);
+router.post('/login', (0, validate_1["default"])(val.login), index_1["default"].login);
+router.post('/verifyuser', verify_1["default"], admin_1["default"].verifyAdmin);
+router.post('/userdetails', verify_1["default"], index_1["default"].getUserDetails);
+router.get('/userProfiledetails/:id',   verify_1["default"],index_1["default"].getUserProfileDetails);
+
+exports["default"] = router;
