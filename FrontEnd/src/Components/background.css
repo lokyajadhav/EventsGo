@@ -1,0 +1,9 @@
+.background {
+    /* background-image: url('../assets/backgroundimg.png'); */
+    background-color: bisque;
+    background-size: cover;
+    height: 50%;
+    color: #fff;
+    font-family: 'Quicksand';
+    font-size: 64px;
+}

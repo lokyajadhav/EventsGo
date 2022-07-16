@@ -1,0 +1,56 @@
+.color {
+  background-color: #c9c0c0;
+  margin-bottom: 10px;
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+}
+
+.title {
+  font-family: 'Kaushan Script', cursive;
+  font-size: xx-large;
+  color: #011185;
+  padding-left: 0.4rem;
+}
+
+.label {
+  font-family: 'Bebas Neue', cursive;
+  font-size: x-large;
+  padding: 2px;
+  margin-right: 9px;
+}
+
+.profilecontainer {
+  background: cadetblue;
+  padding: 30px;
+  width: 150%;
+  border-radius: 1rem;
+}
+
+.nav-btn {
+  margin: 10px;
+  background-color: white !important;
+  color: black !important;
+}
+
+.nav-btn:hover {
+  background-color: #1976d2 !important;
+  color: white !important;
+}
+
+.typograph {
+  font-weight: bold;
+  height: 30px !important;
+  text-align: left !important;
+  margin-left: 10px;
+}
+
+.profileLink {
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+}
+
+.profileLink :hover {
+  color: #000;
+}

@@ -1,0 +1,8 @@
+.background {
+    /* background-image: url('../assets/backgroundimg.png'); */
+    background-color: #fff;
+    background-size: cover;
+    height: 50%;
+    color: #fff;
+    /* font-family: 'Permanent Marker', cursive; */
+}
